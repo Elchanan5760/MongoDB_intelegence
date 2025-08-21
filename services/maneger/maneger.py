@@ -19,5 +19,5 @@ class Manager:
         atlas_client.ping()
         convert_to_df = ConvertToDF.convert(atlas_client.find(collection))
         data_processing = DataProcessing(convert_to_df)
-        data_processing.all_tweets()
-Manager.manager()
+        result = data_processing.all_tweets()
+        return result

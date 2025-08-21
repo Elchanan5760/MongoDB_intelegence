@@ -11,14 +11,12 @@ class DataProcessing:
     def all_tweets(self):
         list_of_processing = []
         for tweet in self.df.iterrows():
-            print(tweet)
             my_dict = {}
             my_dict['id'] = str(tweet[1]['_id'])
             my_dict['original_text'] = str(tweet[1]['Text'])
             my_dict['rarest_word'] = self.rarest_word(str(tweet[1]['Text']))
             my_dict['sentiment'] = self.post_emotion(str(tweet[1]['Text']))
             my_dict['detected_weapons'] = self.detected_weapons(str(tweet[1]['Text']))
-            print(my_dict)
             list_of_processing.append(my_dict)
         return list_of_processing
 
